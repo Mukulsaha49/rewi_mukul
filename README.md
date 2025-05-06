@@ -60,7 +60,7 @@ python main_mukul.py -c configs/train_mukul.yaml
 Alternatively, you can also train all folds at once sequentially with `train_cv.py`. The script will generate configuration files for all folds in a `temp*` directory and run `main.py` with these configuration files sequentially. After the training is finished, the `temp*` directory will be deleted automatically.
 
 ```bash
-python train_cv.py -c configs/train.yaml -m main.py
+python train_cv.py -c configs/train_mukul.yaml -m main.py
 ```
 
 ## Evaluation
@@ -68,13 +68,13 @@ python train_cv.py -c configs/train.yaml -m main.py
 As we are using cross validation, the results are already given in the output files of training. However, you can always re-evaluate the model with the configuration and weight you want. In the case, please ajust the `test.yaml` file accordingly and run `main.py` with it.
 
 ```bash
-python main_mukul.py -c configs/test.yaml
+python main_mukul.py -c configs/test_mukul.yaml
 ```
 
 After you get all results of all folds, you can summarize the results and also calculate the #Params and MACs with `evaluate.py`.
 
 ```bash
-python evaluate.py -c configs/train_mukul.yaml
+python evaluate.py -c configs/test_mukul.yaml
 # or
 python evaluate.py -c path_to_the_configuration_file_in_the_work_directory
 ```
