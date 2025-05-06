@@ -1,0 +1,28 @@
+# train_mukul.yaml
+arch_de: lstm
+arch_en: blcnn
+aug: false
+cache: false
+checkpoint: null
+ctc_decoder: best_path
+device: cuda
+dir_dataset: /home/mukul36/Documents/REWI1/pd_wi_hw5_word
+dir_work:   /home/mukul36/Documents/REWI1/pd_wi_hw5_word
+epoch: 4                # ← total training epochs
+epoch_warmup: 2
+
+freq_eval: 1
+freq_log: 10
+freq_save: 1
+idx_cv: 0
+in_chan: 13
+len_seq: 0 
+lr: 0.001
+num_cls: 1261
+num_worker: 4
+ratio_ds: 8
+seed: 42
+sensors: [AF, AR, G, M, F]
+size_batch: 64
+size_window: 1
+test: false

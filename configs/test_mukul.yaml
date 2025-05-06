@@ -1,0 +1,32 @@
+# Sliding-window evaluation for bigram REWI1
+arch_en: blcnn
+arch_de: lstm
+dir_dataset: /home/mukul36/Documents/REWI1/pd_wi_hw5_word
+dir_work:   /home/mukul36/Documents/REWI1/pd_wi_hw5_word
+vocab_json: token_vocab.json    # bigram vocab
+val_json:   val.json
+ctc_decoder: best_path
+checkpoint: null
+device:     cuda
+idx_cv:     0
+freq_eval: 5 # frequency to evaluate on val set (epoch)
+freq_log: 300 # frequency to log running process (iteration)
+freq_save: 5 # frequency to to save checkpoints (epoch)
+in_chan: 13
+sensors:    [AF, AR, G, M, F]
+ratio_ds:   8
+len_seq:    0
+size_window: 1
+size_batch: 64
+seed:        42
+lr:          0.001
+cache:      false
+num_worker: 4
+test:       true
+
+# sliding-window specific
+window_size: 81   # in raw frames; T_out = 81/ratio_ds = 10 outputs
+overlap:     0.5  # 50% overlap
+seed:        42
+epoch:      3
+epoch_warmup: 1
